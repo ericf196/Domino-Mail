@@ -1,7 +1,7 @@
 @extends('layouts.home')
 @section('content')
 
-    @include('web.sections.top')
+     @include('web.sections.top')
 
     <section id="subContent">
         <div class="container-fluid">
