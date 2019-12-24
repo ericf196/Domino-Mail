@@ -54,9 +54,9 @@ class IndexController extends Controller
         //dd($rankingSupP);
         //dd($rankingSupP['super_polla_1'][0]->id);
         $anuns = $league->publicities()->get();
-        if (!count($league)) {
+        /*if (!count($league)) {
             return view("adminlte::errors.404");
-        }
+        }*/
         return view('web.liga')->with(array('league' => $league, 'news' => $news, 'rankings' => $rankingFive, 'rankingsS' => $rankingSupP, 'anuns' => $anuns));
 
     }

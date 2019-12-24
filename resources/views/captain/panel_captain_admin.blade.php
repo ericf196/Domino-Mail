@@ -6,7 +6,7 @@
 @section('main-content')
 
     <section>
-        {{--<div>
+        <div>
 
             {{$players}}
             <p>--------------</p>
@@ -14,23 +14,23 @@
             <p>--------------</p>
             {{$playersCount}}
 
+            {{--
+                        <h4 style="font-size: 2.5rem;margin-bottom: 20px">Datos Generales</h4>
 
-            <h4 style="font-size: 2.5rem;margin-bottom: 20px">Datos Generales</h4>
+                        @for($i=0; $i< $playersCount; $i++)
 
-            @for($i=0; $i< $playersCount; $i++)
+                            <div class="col-md-6 form-group">
+                                <label for="select{{$i}}" style="font-size: 18px;color: #428bca;">Capitan</label>
+                                <select name="select{{$i}}" class="form-control select" required>
+                                    <option value=""> --Seleccionar --</option>
+                                    @foreach ($players as $item)
+                                        <option value="{{ $item['id'] }}"> {{ $item['name'] }}</option>
+                                    @endforeach
+                                </select>
+                            </div>
 
-                <div class="col-md-6 form-group">
-                    <label for="select{{$i}}" style="font-size: 18px;color: #428bca;">Capitan</label>
-                    <select name="select{{$i}}" class="form-control select" required>
-                        <option value=""> --Seleccionar --</option>
-                        @foreach ($players as $item)
-                            <option value="{{ $item['id'] }}"> {{ $item['name'] }}</option>
-                        @endforeach
-                    </select>
-                </div>
-
-            @endfor
-        </div>--}}
+                        @endfor
+                    </div>--}}
 
         <ul class="list-group">
             <li class="list-group-item">

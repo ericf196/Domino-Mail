@@ -24,6 +24,7 @@ class UsersTableSeeder extends Seeder
             'city' => 'Barquisimeto',
             'state' => 'Lara',
             'cedula' => '19614974',
+            'url_image' => 'img/avatar.jpg',
             'telefono' => '04145667384'
         ]);
     }

@@ -190,35 +190,47 @@
 
         <div class="tab-pane" id="posicionTab" role="tabpanel">
             <br>
-                <span id="AgregarFila4"></span>
+                <!--span id="AgregarFila4"></span-->
+			<div class="container">
+				<div class="row justify-content-md-center">
+					<div id="container-players" >
+
+					</div>
+				</div>
+
+			</div>
             <br><br>
             <hr>
             <br><br>
                 <span id="AgregarFila3"></span>
+
+
         </div>
 
         <div class="tab-pane" id="puntaje" role="tabpanel">
             <br>
              <div class="table-responsive">
                 <table id="table_super_polla" class="tablecompl">
-                    <tr>
-                        <td class="tdG"><input class="input-min" type="text" value="Pos." readonly></td>
-                        <td class="tdG"><input class="input-min" type="text" value="IDJUGADOR" readonly></td> <!-- id del jugador -->
-                        <td class="tdG"><input class="input-min" type="text" value="Nombre" readonly></td>
-                        <td class="tdV"><input class="input-min" type="text" value="J/J" readonly></td>
-                        <td class="tdV"><input class="input-min" type="text" value="J/G" readonly></td>
-                        <td class="tdV"><input class="input-min" type="text" value="J/P" readonly></td>
-                        <td class="tdV"><input class="input-min" type="text" value="PTOS P" readonly></td>
-                        <td class="tdV"><input class="input-min" type="text" value="PTOS N" readonly></td>
-                        <td class="tdV"><input class="input-min" type="text" value="AVG" readonly></td>
-                        <td class="tdG"><input class="input-min" type="text" value="EFEC" readonly></td>
-                        <td class="tdV"><input class="input-min" type="text" value="PRO" readonly></td>
-                        <td class="tdV"><input class="input-min" type="text" value="Z" readonly></td>
-                        <td class="tdV"><input class="input-min" type="text" value="PRO2" readonly></td>
-                        <td class="tdG" style="display:none;"><input class="input-min" type="hidden" value="_token" readonly></td> <!-- prueba -->
-                    </tr>
-                    <tr id="AgregarFila2">
-                    </tr>
+					<thead>
+						<tr>
+							<th class="tdG"><input class="input-min" type="text" value="Pos." readonly></th>
+							<th class="tdG"><input class="input-min" type="text" value="IDJUGADOR" readonly></th> <!-- id del jugador -->
+							<th class="tdG"><input class="input-min" type="text" value="Nombre" readonly></th>
+							<th class="tdV"><input class="input-min" type="text" value="J/J" readonly></th>
+							<th class="tdV"><input class="input-min" type="text" value="J/G" readonly></th>
+							<th class="tdV"><input class="input-min" type="text" value="J/P" readonly></th>
+							<th class="tdV"><input class="input-min" type="text" value="PTOS P" readonly></th>
+							<th class="tdV"><input class="input-min" type="text" value="PTOS N" readonly></th>
+							<th class="tdV" colspan="5"><input class="input-min" type="text" value="AVG"  readonly></th>
+							<th class="tdG" colspan="5"><input class="input-min" type="text" value="EFEC" readonly></th>
+							<th class="tdV"><input class="input-min" type="text" value="PRO" readonly></th>
+							<th class="tdV"><input class="input-min" type="text" value="Z" readonly></th>
+							<th class="tdV"><input class="input-min" type="text" value="PRO2" readonly></th>
+							<th class="tdG" style="display:none;"><input class="input-min" type="hidden" value="_token" readonly></th> <!-- prueba -->
+						</tr>
+					</thead>
+						<tr id="AgregarFila2">
+						</tr>
 
                 </table>
             </div>
@@ -267,14 +279,18 @@
 			$('#'+llena).focus();
 		}
 	});
+
+    var a = [];
+
 	function RegSupPol(){
 		for (var y =4; y > 0; y--) {
 					PM=IdNum%4;//posicion en mesa
 			 if (PM==1) {
 				PosMesa=Puesto+"A";
-				$('#AgregarFila3').before('<table style="background-image: url(\'mesa-domino.png\'); background-size:100%; background-repeat: no-repeat; width: 300px; height: 300px; float: left;"><tr><td></td><td style="text-align: center;"><h3><span type="text" id="Sillanombre'+IdNum+'"></span><br> '+Puesto+'A</h3></td><td></td></tr><tr >	<td style="text-align: center;"><h3 class="rotate1"><span type="text" id="Sillanombre'+(IdNum+1)+'"></span><br> '+Puesto+'B</h3></td>	<td ></td>	<td style="text-align: center;"><h3 class="rotate2"><span type="text" id="Sillanombre'+(IdNum+3)+'"></span><br> '+Puesto+'D</h3></td></tr><tr>	<td></td>	<td style="text-align: center;"><h3><span type="text" id="Sillanombre'+(IdNum+2)+'"></span><br> '+Puesto+'C</h3></td>	<td></td></tr></table>');
+				$('#AgregarFila3').before('<table style="background-image: url(\'img/mesa-domino.png\'); background-size:100%; background-repeat: no-repeat; width: 300px; height: 300px; float: left;"><tr><td></td><td style="text-align: center;"><h3><span type="text" id="Sillanombre'+IdNum+'"></span><br> '+Puesto+'A</h3></td><td></td></tr><tr >	<td style="text-align: center;"><h3 class="rotate1"><span type="text" id="Sillanombre'+(IdNum+1)+'"></span><br> '+Puesto+'B</h3></td>	<td ></td>	<td style="text-align: center;"><h3 class="rotate2"><span type="text" id="Sillanombre'+(IdNum+3)+'"></span><br> '+Puesto+'D</h3></td></tr><tr>	<td></td>	<td style="text-align: center;"><h3><span type="text" id="Sillanombre'+(IdNum+2)+'"></span><br> '+Puesto+'C</h3></td>	<td></td></tr></table>');
 
-				$('#AgregarFila4').before('<span style="border: solid; margin-left: 5px;"><span class="Posicion">'+Puesto+'A </span> 	<b><span class="Posicionnombre" id="Snombre'+IdNum+'"></span></b></span><span style="border: solid; margin-left: 5px;" ><span class="Posicion">'+Puesto+'B </span> <b><span class="Posicionnombre" id="Snombre'+(IdNum+1)+'"></span></b></span><span style="border: solid; margin-left: 5px;"><span  class="Posicion">'+Puesto+'C </span> <b><span class="Posicionnombre" id="Snombre'+(IdNum+2)+'"></span></b></span><span style="border: solid; margin-left: 5px;" ><span  class="Posicion">'+Puesto+'D </span> <b><span class="Posicionnombre" id="Snombre'+(IdNum+3)+'"></span></b></span>');
+
+				//$('#AgregarFila4').before('<span style="border: solid; margin-left: 5px;"><span class="Posicion">'+Puesto+'A </span> 	<b><span class="Posicionnombre" id="Snombre'+IdNum+'"></span></b></span><span style="border: solid; margin-left: 5px;" ><span class="Posicion">'+Puesto+'B </span> <b><span class="Posicionnombre" id="Snombre'+(IdNum+1)+'"></span></b></span><span style="border: solid; margin-left: 5px;"><span  class="Posicion">'+Puesto+'C </span> <b><span class="Posicionnombre" id="Snombre'+(IdNum+2)+'"></span></b></span><span style="border: solid; margin-left: 5px;" ><span  class="Posicion">'+Puesto+'D </span> <b><span class="Posicionnombre" id="Snombre'+(IdNum+3)+'"></span></b></span>');
 			 }else if (PM==2) {
 				PosMesa=Puesto+"B";
 			 }else if (PM==3) {
@@ -294,10 +310,10 @@
 
 					Bucle=Bucle+'<td><input type="text" name="PuntosF'+IdNum+'" class="'+clase+' numeros PuntosF Med90" id="PuntosF'+i+''+IdNum+'" placeholder="F'+i+'" maxlength="3" Conti="'+i+'" IdNum="'+IdNum+'" disabled></td><td><input type="text" name="PuntosC'+IdNum+'" class="'+clase+' numeros PuntosC Med90" id="PuntosC'+i+''+IdNum+'" placeholder="C'+i+'" maxlength="3" Conti="'+i+'" IdNum="'+IdNum+'" disabled></td>';
 				}
-				TrFin='<td class="tdV"><input type="number" class="JG Med90" id="JG'+IdNum+'" value="0" disabled></td><td class="tdG"><input type="number" class="Efec Med90" id="Efec'+IdNum+'" value="0" disabled></td></tr>';
+				TrFin='<td class="tdV"><input type="number" class="JG Med90" id="JG'+IdNum+'" value="0" disabled></td><td class="tdG" style="padding: 0;"><input type="number" class="Efec Med90" id="Efec'+IdNum+'" value="0" disabled></td></tr>';
 
 			$('#AgregarFila').before(TrIni+Bucle+TrFin);//imprimo el nuevo registro
-			$('#AgregarFila2').before('<tr class="celdas" id="posiciones'+IdNum+'"><td>'+IdNum+'</td><td><input type="number" name="Cno'+IdNum+'" id="Cno'+IdNum+'" disabled></td><td><span style="padding-right: 80px;"><input type="text" name="CnombreJG'+IdNum+'" id="CnombreJG'+IdNum+'" disabled></td><td><input type="number" class="Med90" id="CJJ'+IdNum+'" value="0" disabled></td><td><input type="number" class="Med90" id="CJG'+IdNum+'" value="0" disabled></td><td><input type="number" class="Med90" id="CJP'+IdNum+'" value="0" disabled></td><td><input type="number" class="Med90" id="PuntF'+IdNum+'" value="0" disabled></td><td><input type="number" class="Med90" id="PuntC'+IdNum+'" value="0" disabled></td><td><input type="number" class="Med90" id="AVE'+IdNum+'" value="0" disabled></td><td class="tdG"><input type="number" class="Med90" id="CEfec'+IdNum+'" value="0" disabled></td><td><input type="number" class="Med90" id="Pro1'+IdNum+'" value="0" disabled></td><td><input type="number" class="Med90" id="ZF'+IdNum+'" value="0" disabled></td><td><input type="number" class="Med90" id="Pro2'+IdNum+'" value="0" disabled></td>/tr>');
+			$('#AgregarFila2').before('<tr class="celdas" id="posiciones'+IdNum+'" ><td>'+IdNum+'</td><td><input type="number" name="Cno'+IdNum+'" id="Cno'+IdNum+'" disabled></td><td><span style="padding-right: 80px;"><input type="text" name="CnombreJG'+IdNum+'" id="CnombreJG'+IdNum+'" disabled></td><td><input type="number" class="Med90" id="CJJ'+IdNum+'" value="0" disabled></td><td><input type="number" class="Med90" id="CJG'+IdNum+'" value="0" disabled></td><td><input type="number" class="Med90" id="CJP'+IdNum+'" value="0" disabled></td><td><input type="number" class="Med90" id="PuntF'+IdNum+'" value="0" disabled></td><td><input type="number" class="Med90" id="PuntC'+IdNum+'" value="0" disabled></td><td colspan="5"><input type="number" class="Med90" id="AVE'+IdNum+'" value="0" disabled></td><td class="tdG" colspan="5"><input type="number" class="Med90" id="CEfec'+IdNum+'" value="0" disabled></td><td><input type="number" class="Med90" id="Pro1'+IdNum+'" value="0" disabled></td><td><input type="number" class="Med90" id="ZF'+IdNum+'" value="0" disabled></td><td><input type="number" class="Med90" id="Pro2'+IdNum+'" value="0" disabled></td>/tr>');
 
 			IdNum++;//incremento el numero de la lista en 1
 		};
@@ -567,13 +583,12 @@ function autoCompletado(C,N){
     }
 
     function enabledSelect() {
-        var selected = [];
+        const selected = [];
 
         $(".select").each(function () {
             $(this).each(function () {
-                if (($('option:selected', this).val()) != 0) {
+                if ( ($('option:selected', this).val()) != 0 ) {
                     selected.push(($('option:selected', this).val()));
-
                 }
             });
         });
@@ -672,6 +687,34 @@ function autoCompletado(C,N){
         $("#AgregarReg").hide();
 
         $(".select").prop("disabled", "disabled");
+
+
+        const line = [];
+
+        $(".select").each(function () {
+            $(this).each(function () {
+                if ( ($('option:selected', this).val()) != 0 ) {
+                    let objLine = { "No": $('option:selected', this).parents("tr")[0].childNodes[3].childNodes[0].value, "table": $('option:selected', this).parents("tr")[0].childNodes[1].innerText }
+                    line.push( objLine );
+                }
+            });
+        });
+
+        orderedobjLine = [...line];
+        orderedobjLine.sort((a, b) => (parseFloat(a.No) > parseFloat(b.No)) ? 1 : -1)
+
+        console.log(line)
+        console.log(orderedobjLine)
+
+        //var files = JSON.parse(orderedobjLine);
+
+        orderedobjLine.map( (player)=>{
+            $( "#container-players" ).append( ' <div class="col col-md-2" style="display: grid; grid-template-columns: 1fr 2fr; margin: 10px; border-radius:5px; padding-left: 0; border: 1px solid black"><div style="grid-column: 1; background: #ff9400; padding: 20px; font-size: 20px; text-align: center;">'+ player.No  +'</div><div style="grid-column: 2; padding: 20px; font-size: 20px; text-align: center;" >'+player.table +'</div></div>' );
+		})
+
+
+
+
 
     }
 

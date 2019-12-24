@@ -130,6 +130,11 @@ Route::group(['middleware' => 'auth'], function () {
 
 });
 
+Route::get('laravel/command', function () {
+    \Artisan::call('migrate');
+    //\Artisan::call('db:seed');
+    dd("Done");
+});
 
 Route::get('user/verify/{token}/{idUser}/{idTeam}', 'InvitationController@responseVerify');
 Route::get('sendEmail', 'CaptainController@sendEmail');
@@ -145,6 +150,7 @@ Route::get('{estado}/{idLiga}/{idNoticia}', 'IndexController@detalle_n');
 Route::get('{estado}/{idLiga}/noticias/{idNoticias}', 'IndexController@noticias_all');
 Route::get('{estado}/{idLiga}/jugadores/{fecha}', 'IndexController@jugadores_all');
 Route::get('{estado}/{idLiga}/superpollas/{fecha}', 'IndexController@superpollas_all');
+
 
 
 
