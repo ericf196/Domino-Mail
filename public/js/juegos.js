@@ -63,14 +63,14 @@ $(document).ready(function () {
 
 
     $(document).on('click', '#submit_tabla', function () {
-        // $('#submit_tabla').click(function () {
-        var myTab = document.getElementById('table_super_polla');
+
+        var myTab = document.getElementById('tabla-super-polla-puntaje');
 
         var obj = '[';
 
         var header = 1;
 
-        var rowLength = myTab.rows.length - 1;
+        var rowLength = myTab.rows.length ;
 
         for (row = 1; row < rowLength; row++) {
 
@@ -78,15 +78,17 @@ $(document).ready(function () {
             var cellLength = myTab.rows[row].cells.length - 1;
             for (c = 1; c < myTab.rows[row].cells.length; c++) {
                 var headers = myTab.rows.item(0).cells[header];
+                //console.log(headers)
                 var element = myTab.rows.item(row).cells[c];
                 header++;
-                obj = obj + '"' + headers.childNodes[0].value + '" : "' + element.childNodes[0].value + '"';
-                console.log(element.childNodes[0].value);
+                obj = obj + '"' + headers.title + '" : "' + element.childNodes[0].textContent + '"';
+
                 if (header <= cellLength) {
                     obj = obj + ','
                 }
             }
-            if (row != rowLength - 1) {
+
+            if (row !== rowLength - 1) {
                 obj = obj + '},';
                 header = 1;
             } else {
@@ -106,29 +108,30 @@ $(document).ready(function () {
             }
         });
 
-        // console.log(obj);
+         console.log(obj);
         $.ajax({
-            // la URL para la petición
             url: '/sent_table',
             data: obj,
             type: 'POST',
             dataType: 'json',
 
-            /*beforeSend: function () {
-             $("#" + div_resul + "").html($("#cargador_empresa").html());
-             $('button[type=submit]').attr("disabled", "disabled");
-             },*/
+            //beforeSend: function () {
+             //$("#" + div_resul + "").html($("#cargador_empresa").html());
+            // $('button[type=submit]').attr("disabled", "disabled");
+            // },
             success: function (resul) {
                 $("#" + div_resul + "").html(resul);
             },
             error: function (xhr, status) {
+                console.log(xhr)
+                console.log(status)
                 $("#" + div_resul + "").html('Ha ocurrido un error, revise su conexion e intentelo nuevamente');
             },
             complete: function () {
-                window.location.href = window.location.pathname;
+               // window.location.href = window.location.pathname;
 
-                /*$('button[type=submit]').removeAttr("disabled");
-                 $("#" + quien)[0].reset();*/
+                //$('button[type=submit]').removeAttr("disabled");
+
             }
 
         });

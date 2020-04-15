@@ -1,588 +1,782 @@
 <style type="text/css">
-    body {
-        color: #8b8b8b;
-        font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
-    }
+	body {
+		color: #8b8b8b;
+		font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
+	}
 
-    .tablecompl {
-        border-spacing: 0px;
-    }
+	.tablecompl {
+		border-spacing: 0px;
+	}
 
-    .tablecompl td, .tablecompl tr {
-        border-bottom: 1px solid #ececec;
-    }
+	.tablecompl td,
+	.tablecompl tr {
+		border-bottom: 1px solid #ececec;
+	}
 
-    .tdG { /*td de color gris*/
-        background-color: #eeeeee;
-        padding: 8px;
-    }
+	.tdG {
+		/*td de color gris*/
+		background-color: #eeeeee;
+		padding: 8px;
+	}
 
-    .tdB { /*td de color Blanco*/
-        background-color: #fff;
-        padding: 1px;
-    }
+	.tdB {
+		/*td de color Blanco*/
+		background-color: #fff;
+		padding: 1px;
+	}
 
-    .tdV { /*td de  color verde*/
-        background-color: #3c8dbc;
-        color: #fff;
-        padding: 8px;
-    }
+	.tdV {
+		/*td de  color verde*/
+		background-color: #3c8dbc;
+		color: #fff;
+		padding: 8px;
+	}
 
-    .tdA { /*td de  color Amarillo*/
-        background-color: #fcf7af;
-        padding: 8px;
-    }
+	.tdA {
+		/*td de  color Amarillo*/
+		background-color: #fcf7af;
+		padding: 8px;
+	}
 
-    .tdN { /*td de  color Naranja*/
-        background-color: #ff9400;
-        color: #fff;
-        text-align: center;
-    }
+	.tdN {
+		/*td de  color Naranja*/
+		background-color: #ff9400;
+		color: #fff;
+		text-align: center;
+	}
 
-    .Med90 {
-        width: 100%;
-        font-size: 16px;
-        text-align: center;
-    }
+	.nombreJG {
+		width: 100%;
+	}
 
-    .nombreJG {
-        width: 100%;
-    }
+	.PuntosC {
+		color: red;
+		width: 100%;
+	}
 
-    .PuntosC {
-        color: red;
-    }
+	.PuntosF {
+		color: green;
+		width: 100%;
+	}
 
-    .PuntosF {
-        color: green;
-    }
+	input {
+		border: 0px solid #e8e8e8;
+		background: transparent;
+	}
 
-    .rotate1 {
-        display: inline-block;
-        filter: progid:DXImageTransform.Microsoft.BasicImage(rotation=3);
-        -webkit-transform: rotate(270deg);
-        -ms-transform: rotate(270deg);
-        transform: rotate(270deg);
-    }
+	::placeholder {
+		color: #b7b7b7;
+		opacity: 1;
+	}
 
-    .rotate2 {
-        display: inline-block;
-        filter: progid:DXImageTransform.Microsoft.BasicImage(rotation=3);
-        -webkit-transform: rotate(-270deg);
-        -ms-transform: rotate(-270deg);
-        transform: rotate(-270deg);
-    }
+	:-ms-input-placeholder {
+		color: #b7b7b7;
+	}
+
+	::-ms-input-placeholder {
+		color: #b7b7b7;
+	}
+
+	.px-2 {
+		padding-right: 0.5rem !important;
+		padding-left: 0.5rem !important;
+	}
+
+	.numero-tabla {
+		background-color: #ff9400b8;
+		text-align: center;
+		color: #fff;
+	}
 
 
-    .celdas:nth-child(odd) {
-        background: #f9f9f9;
-    }
+	select {
+		border: 0px;
+		background: transparent;
+	}
 
-    input {
-        border: 0px solid #e8e8e8;
-        background: transparent;
-    }
+	select:focus,
+	select:hover {
+		border: 0px;
+	}
 
-    ::placeholder {
-        color: #b7b7b7;
-        opacity: 1;
-    }
+	/* ultimos estilos para los numeros y mesas */
 
-    :-ms-input-placeholder {
-        color: #b7b7b7;
-    }
+	.container-table-player {
+		display: grid;
+		grid-template-columns: 1fr 1fr;
+		grid-template-rows: 70px;
+		border-radius: 5px;
+		padding: 0;
+		border: 1px solid black;
+		margin: 10px;
+	}
 
-    ::-ms-input-placeholder {
-        color: #b7b7b7;
-    }
+	.item-number {
+		grid-column: 1;
+		background: #ff9400;
+		font-size: 20px;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		color: white;
+	}
 
-    .px-2 {
-        padding-right: 0.5rem !important;
-        padding-left: 0.5rem !important;
-    }
+	.item-table {
+		grid-column: 2;
+		font-size: 20px;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		color: black;
+	}
 
-    .Posicion {
-        background-color: #ff9400;
-        color: #fff;
-        text-align: center;
-        padding: 12px;
-        margin-left: 20px;
-    }
+	.container-table-player {
+		display: grid;
+		grid-template-columns: 1fr 1fr;
+		grid-template-rows: 70px;
+		border-radius: 5px;
+		padding: 0;
+		border: 1px solid black;
+		margin: 10px;
+	}
 
-    .Posicionnombre {
-        background-color: #dde0e2;
-        color: #808080;
-        padding: 12px;
-        line-height: 30px;
-    }
-    .text-mesa { color: #ff9400; }
-
-    select { border: 0px; background: transparent; }
-    select:focus, select:hover { border: 0px; }
+	/* ultimos estilos para los numeros y mesas */
 </style>
 
-<div><!-- princ -->
-
-    <!-- Nav tabs -->
-    <ul class="nav nav-tabs" role="tablist">
-        <li id="home-tab" class="nav-item active">
-            <a class="nav-link" data-toggle="tab" href="#juegoTab" role="tab">Juego</a>
-        </li>
-        <li id="profile-tab" class="nav-item">
-            <a class="nav-link" data-toggle="tab" href="#posicionTab" role="tab">Posicion de mesa </a>
-        </li>
-        <li id="profile-tab" class="nav-item">
-            <a class="nav-link" data-toggle="tab" href="#puntaje" role="tab">Puntaje</a>
-        </li>
-    </ul>
-
-    <!-- Tab panels -->
-    <div class="tab-content">
-        <div class="tab-pane active" id="juegoTab" role="tabpanel">
-            <br>
-            <script type="text/javascript">
-                var juegos = '<?php echo $juegos;?>';
-            </script>
-
-            <div class="table-responsive">
-                <table class="tablecompl">
-                    <tr>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        @for ($i = 0; $i < $juegos; $i++)
-                            <td colspan="2" class="tdV">Juego {{$i+1}}</td>
-                        @endfor
-                        <td></td>
-                        <td></td>
-                    </tr>
-                    <tr>
-                        <td class="tdG">Pos.</td>
-                        <td class="tdG">Mesa</td>
-                        <td class="tdG"><span style="padding-right: 80px;"></span>Nombre<span
-                                    style="padding-right: 80px;"></span>
-                        </td>
-                        <td class="tdG">No.</td>
-
-                        @for ($i = 0; $i < $juegos; $i++)
-                            <td class="tdG" title="Puntos a Fabor.">F</td>
-                            <td class="tdG" title="Puntos en Contra.">C</td>
-                        @endfor
-                        <td class="tdV">J/G</td>
-                        <td class="tdG">AVG</td>
-                    </tr>
-                    <tr id="AgregarFila">
-                        <td class="tdN"></td>
-                        <td class="tdG"></td>
-                        <td class="tdA"><input type="text" style="width: 100%;" id="AgregarReg" placeholder="Nuevo..."></td>
-                        <td class="text-center" colspan="3">
-                            <!-- <button type="button" id="BTNGuardar" style="display: none;">Guardar</button> -->
-                            <input id="submit_tabla" type="button" class="btn btn-primary BTNGuardar" style="display: none;" value="Guardar"/>
-                            <button type="button" id="BTNSig" onclick="Sigiente(1)" style="display: none;" class="btn btn-primary">Terminar Juego 1</button>
-                            <button type="button" id="BTNaleatorio" onclick="aleatorio()" class="btn btn-primary">Aleatorio</button>
-                        </td>
-                    </tr>
-                </table>
-            </div>
-            <br><br>
-        </div>
-
-        <div class="tab-pane" id="posicionTab" role="tabpanel">
-            <br>
-                <!--span id="AgregarFila4"></span-->
-			<div class="container">
-				<div class="row justify-content-md-center">
-					<div id="container-players" >
-
-					</div>
-				</div>
-
-			</div>
-            <br><br>
-            <hr>
-            <br><br>
-                <span id="AgregarFila3"></span>
-
-
-        </div>
-
-        <div class="tab-pane" id="puntaje" role="tabpanel">
-            <br>
-             <div class="table-responsive">
-                <table id="table_super_polla" class="tablecompl">
-					<thead>
-						<tr>
-							<th class="tdG"><input class="input-min" type="text" value="Pos." readonly></th>
-							<th class="tdG"><input class="input-min" type="text" value="IDJUGADOR" readonly></th> <!-- id del jugador -->
-							<th class="tdG"><input class="input-min" type="text" value="Nombre" readonly></th>
-							<th class="tdV"><input class="input-min" type="text" value="J/J" readonly></th>
-							<th class="tdV"><input class="input-min" type="text" value="J/G" readonly></th>
-							<th class="tdV"><input class="input-min" type="text" value="J/P" readonly></th>
-							<th class="tdV"><input class="input-min" type="text" value="PTOS P" readonly></th>
-							<th class="tdV"><input class="input-min" type="text" value="PTOS N" readonly></th>
-							<th class="tdV" colspan="5"><input class="input-min" type="text" value="AVG"  readonly></th>
-							<th class="tdG" colspan="5"><input class="input-min" type="text" value="EFEC" readonly></th>
-							<th class="tdV"><input class="input-min" type="text" value="PRO" readonly></th>
-							<th class="tdV"><input class="input-min" type="text" value="Z" readonly></th>
-							<th class="tdV"><input class="input-min" type="text" value="PRO2" readonly></th>
-							<th class="tdG" style="display:none;"><input class="input-min" type="hidden" value="_token" readonly></th> <!-- prueba -->
-						</tr>
-					</thead>
-						<tr id="AgregarFila2">
-						</tr>
-
-                </table>
-            </div>
-            <br><br>
-        </div>
-
-    </div>
-
-</div><!-- /princ -->
-
-
 <?php
-    $optionNombre='<option value="0">--Seleccionar--</option>';
-    foreach ($jugadores as $jugador){
-         $optionNombre.= '<option valOpt="'.$jugador->id.'" value="'.$jugador->name.'">'.$jugador->name.'</option>';
-    }
+ $optionNombre='<option value="0">--Seleccionar--</option>';
+ foreach ($jugadores as $jugador){
+      $optionNombre.= '<option valOpt="'.$jugador->id.'" value="'.$jugador->id.'">'.$jugador->name.'</option>';
+ }
 
-	$optionNombre = str_replace("'", "\'", $optionNombre);
+ $optionNombre = str_replace("'", "\'", $optionNombre);
 ?>
 
+<script>
 
-<script type="text/javascript">
-    var assetMesa = '{{ asset('img/mesa-domino.png') }}';
-    var optionNombre2 = '<?php echo $optionNombre ?>';
-
+    let optionNombre2 = '<?php echo $optionNombre ?>';
+    /*let options = ' <option value="0">Seleccione</option><option value="1">Alberto</option><option value="2">Jose</option><option value="3">Maria</option><option value="4">Pedro</option><option value="5">Miguel</option><option value="6">Mariana</option><option value="7">Vicente</option><option value="8">Adolfo</option><option value="9">Belkis</option>';
+    options += ' <option value="10">Dennys</option><option value="11">Enrique</option> <option value="12">Lucas</option><option value="13">Benito</option><option value="14">Teolimar</option><option value="15">Arminda</option><option value="16">Aura</option><option value="17">Ines</option><option value="18">Douglas</option><option value="19">Jormincha</option>';
+    options += ' <option value="20">Roman</option><option value="21">Alejandra</option><option value="22">Sonia</option><option value="23">Maritza</option><option value="24">Jhonatan</option><option value="25">Belen</option><option value="26">Mercedes</option><option value="27">Monica</option><option value="28">Kimberly</option>';*/
 </script>
 
+<select id="select-ronda">
+	<option value="5">5</option>
+	<option value="6">6</option>
+	<option value="7">7</option>
+	<option value="8">8</option>
+</select>
+
+
+<ul class="nav nav-tabs" id="myTab" role="tablist">
+	<li class="nav-item">
+		<a class="nav-link active" id="home-tab" data-toggle="tab" href="#juego" role="tab" aria-controls="juego"
+		   aria-selected="true">Juego</a>
+	</li>
+	<li class="nav-item">
+		<a class="nav-link" id="profile-tab" data-toggle="tab" href="#posiciones" role="tab"
+		   aria-controls="posiciones" aria-selected="false">Posicion en Mesa</a>
+	</li>
+	<li class="nav-item">
+		<a class="nav-link" id="puntaje-tab" data-toggle="tab" href="#puntaje" role="tab" aria-controls="puntaje"
+		   aria-selected="false">Puntaje</a>
+	</li>
+</ul>
+
+<div class="tab-content" id="myTabContent">
+	<div class="tab-pane active" id="juego" role="tabpanel">
+		<table id="tabla-super-polla" data-ronda-en-juego="0">
+			<thead>
+			<tr id="ronda-juego">
+				<th colspan="4"></th>
+				<th colspan="2" class="tdV">Juego 1</th>
+				<th colspan="2" class="tdV">Juego 2</th>
+				<th colspan="2" class="tdV">Juego 3</th>
+				<th colspan="2" class="tdV">Juego 4</th>
+				<th colspan="2" class="tdV last-ronda-juego">Juego 5</th>
+				<th colspan="2"></th>
+			</tr>
+			<tr id="ronda-Puntos">
+				<th class="tdG">Pos.</th>
+				<th class="tdG">Mesa</th>
+				<th class="tdG">Nombre</th>
+				<th class="tdG">No.</th>
+				<th class="tdG" title="Puntos a Fabor.">F</th>
+				<th class="tdG" title="Puntos en Contra.">C</th>
+				<th class="tdG" title="Puntos a Fabor.">F</th>
+				<th class="tdG" title="Puntos en Contra.">C</th>
+				<th class="tdG" title="Puntos a Fabor.">F</th>
+				<th class="tdG" title="Puntos en Contra.">C</th>
+				<th class="tdG" title="Puntos a Fabor.">F</th>
+				<th class="tdG" title="Puntos en Contra.">C</th>
+				<th class="tdG" title="Puntos a Fabor.">F</th>
+				<th class="tdG" title="Puntos en Contra.">C</th>
+				<th class="tdV">J/G</th>
+				<th id="head-avg" class="tdG">AVG</th>
+			</tr>
+			</thead>
+			<tbody>
+			<tr class="row-game">
+				<td class="tdN">1</td>
+				<td class="tdG">Mesa</td>
+				<td class="tdG">
+					<select class="select">
+						<!--script>document.write(optionNombre2)</script-->
+					</select>
+				</td>
+				<td class="numero-tabla">No.</td>
+				<td data-ronda="1" data-puntos="F"><input type="number" class="PuntosF" disabled /></td>
+				<td data-ronda="1" data-puntos="C"><input type="number" class="PuntosC" disabled /></td>
+				<td data-ronda="2" data-puntos="F"><input type="number" class="PuntosF" disabled /></td>
+				<td data-ronda="2" data-puntos="C"><input type="number" class="PuntosC" disabled /></td>
+				<td data-ronda="3" data-puntos="F"><input type="number" class="PuntosF" disabled /></td>
+				<td data-ronda="3" data-puntos="C"><input type="number" class="PuntosC" disabled /></td>
+				<td data-ronda="4" data-puntos="F"><input type="number" class="PuntosF" disabled /></td>
+				<td data-ronda="4" data-puntos="C"><input type="number" class="PuntosC" disabled /></td>
+				<td data-ronda="5" data-puntos="F"><input type="number" class="PuntosF" disabled /></td>
+				<td data-ronda="5" data-puntos="C"><input type="number" class="PuntosC" disabled /></td>
+				<td class="jg">0</td>
+				<td class="avg">0</td>
+			</tr>
+			<tr class="row-game">
+				<td class="tdN">2</td>
+				<td class="tdG">Mesa</td>
+				<td class="tdG">
+					<select class="select">
+						<!--script>document.write(optionNombre2)</script-->
+					</select>
+				</td>
+				<td class="numero-tabla">No.</td>
+				<td data-ronda="1" data-puntos="F"><input type="number" class="PuntosF" disabled /></td>
+				<td data-ronda="1" data-puntos="C"><input type="number" class="PuntosC" disabled /></td>
+				<td data-ronda="2" data-puntos="F"><input type="number" class="PuntosF" disabled /></td>
+				<td data-ronda="2" data-puntos="C"><input type="number" class="PuntosC" disabled /></td>
+				<td data-ronda="3" data-puntos="F"><input type="number" class="PuntosF" disabled /></td>
+				<td data-ronda="3" data-puntos="C"><input type="number" class="PuntosC" disabled /></td>
+				<td data-ronda="4" data-puntos="F"><input type="number" class="PuntosF" disabled /></td>
+				<td data-ronda="4" data-puntos="C"><input type="number" class="PuntosC" disabled /></td>
+				<td data-ronda="5" data-puntos="F"><input type="number" class="PuntosF" disabled /></td>
+				<td data-ronda="5" data-puntos="C"><input type="number" class="PuntosC" disabled /></td>
+				<td class="jg">0</td>
+				<td class="avg">0</td>
+			</tr>
+			<tr class="row-game">
+				<td class="tdN">3</td>
+				<td class="tdG">Mesa</td>
+				<td class="tdG">
+					<select class="select">
+						<script></script>
+					</select>
+				</td>
+				<td class="numero-tabla">No.</td>
+				<td data-ronda="1" data-puntos="F"><input type="number" class="PuntosF" disabled /></td>
+				<td data-ronda="1" data-puntos="C"><input type="number" class="PuntosC" disabled /></td>
+				<td data-ronda="2" data-puntos="F"><input type="number" class="PuntosF" disabled /></td>
+				<td data-ronda="2" data-puntos="C"><input type="number" class="PuntosC" disabled /></td>
+				<td data-ronda="3" data-puntos="F"><input type="number" class="PuntosF" disabled /></td>
+				<td data-ronda="3" data-puntos="C"><input type="number" class="PuntosC" disabled /></td>
+				<td data-ronda="4" data-puntos="F"><input type="number" class="PuntosF" disabled /></td>
+				<td data-ronda="4" data-puntos="C"><input type="number" class="PuntosC" disabled /></td>
+				<td data-ronda="5" data-puntos="F"><input type="number" class="PuntosF" disabled /></td>
+				<td data-ronda="5" data-puntos="C"><input type="number" class="PuntosC" disabled /></td>
+				<td class="jg">0</td>
+				<td class="avg">0</td>
+			</tr>
+			<tr class="row-game">
+				<td class="tdN">4</td>
+				<td class="tdG">Mesa</td>
+				<td class="tdG">
+					<select class="select">
+						<!--script>document.write(optionNombre2)</script-->
+					</select>
+				</td>
+				<td class="numero-tabla">No.</td>
+				<td data-ronda="1" data-puntos="F"><input type="number" class="PuntosF" disabled /></td>
+				<td data-ronda="1" data-puntos="C"><input type="number" class="PuntosC" disabled /></td>
+				<td data-ronda="2" data-puntos="F"><input type="number" class="PuntosF" disabled /></td>
+				<td data-ronda="2" data-puntos="C"><input type="number" class="PuntosC" disabled /></td>
+				<td data-ronda="3" data-puntos="F"><input type="number" class="PuntosF" disabled /></td>
+				<td data-ronda="3" data-puntos="C"><input type="number" class="PuntosC" disabled /></td>
+				<td data-ronda="4" data-puntos="F"><input type="number" class="PuntosF" disabled /></td>
+				<td data-ronda="4" data-puntos="C"><input type="number" class="PuntosC" disabled /></td>
+				<td data-ronda="5" data-puntos="F"><input type="number" class="PuntosF" disabled /></td>
+				<td data-ronda="5" data-puntos="C"><input type="number" class="PuntosC" disabled /></td>
+				<td class="jg">0</td>
+				<td class="avg">0</td>
+			</tr>
+			</tbody>
+		</table>
+
+		<button id="button-add" type="button" class="btn btn-success">Añadir</button>
+		<button id="button-mix" type="button" class="btn btn-prymary" disabled="disabled">Mezclar 2</button>
+		<button id="button-start" type="button" class="btn btn-prymary" disabled="disabled">Iniciar Ronda 3</button>
+
+		<button id="button-order" type="button" class="btn btn-warning" disabled="disabled">Order 4</button>
+
+        <input id="submit_tabla" type="button" class="btn btn-primary BTNGuardar" value="Guardar"/>
+	</div>
+
+	<div class="tab-pane" id="posiciones" role="tabpanel" aria-labelledby="profile-tab">
+		<div id="container-players" class="row">
+			<!--Espacio donde se Añade las mesas y los numeros de jugadores-->
+		</div>
+	</div>
+
+	<div class="tab-pane" id="puntaje" role="tabpanel">
+
+		<table id="tabla-super-polla-puntaje" style="width: 100%;">
+			<thead>
+			<tr id="ronda-Puntos-puntaje">
+				<th class="tdG" title="Pos.">Pos.</th>
+				<th class="tdG" title="IDJUGADOR">Id Jugador</th>
+				<th class="tdG" title="Nombre">Nombre</th>
+				<th class="tdV" title="J/J">J/J</th>
+				<th id="head-jg-puntaje" class="tdV" title="J/G">J/G</th>
+				<th class="tdV" title="J/P">J/P</th>
+				<th class="tdV" title="PTOS P">PTOS P</th>
+				<th class="tdV" title="PTOS N">PTOS N</th>
+				<th id="head-avg-puntaje" class="tdV" title="AVG" colspan="5">Avg</th>
+				<th class="tdG" title="EFEC" colspan="5">EFEC</th>
+				<th class="tdV" title="PRO">PRO</th>
+				<th class="tdV" title="Z">Z</th>
+				<th class="tdV" title="PRO2">PRO2</th>
+			</tr>
+			</thead>
+			<tbody>
+
+			</tbody>
+		</table>
+
+	</div>
+</div>
+
 <script type="text/javascript">
 
-    var CantJue = '<?php echo $juegos;?>';
-	var PosLis=1;//posicion en la lista
-	var IdNum=1;//posicion en la mesa
-	var	Puesto=1;//puesto en la mesa
-	$('#AgregarReg').click(function(){//Click para crear nuevo registro
-		CatVac=0;
-			$(".nombreJG").each(function(){
-				if ($(this).val()==0) {
-					CatVac++;
-				}
-				llena=$(this).attr('id');
-			});
-		if (CatVac==0) {
-			RegSupPol();
-            $('.select').trigger('change');
-		}else{
-			$('#'+llena).focus();
-		}
+    $( document ).ready(function() {
+		$(".select").append(optionNombre2)
 	});
 
-    var a = [];
+    $(document).on('click', '#button-order', function (event) {
 
-	function RegSupPol(){
-		for (var y =4; y > 0; y--) {
-					PM=IdNum%4;//posicion en mesa
-			 if (PM==1) {
-				PosMesa=Puesto+"A";
-				$('#AgregarFila3').before('<table style="background-image: url(\'img/mesa-domino.png\'); background-size:100%; background-repeat: no-repeat; width: 300px; height: 300px; float: left;"><tr><td></td><td style="text-align: center;"><h3><span type="text" id="Sillanombre'+IdNum+'"></span><br> '+Puesto+'A</h3></td><td></td></tr><tr >	<td style="text-align: center;"><h3 class="rotate1"><span type="text" id="Sillanombre'+(IdNum+1)+'"></span><br> '+Puesto+'B</h3></td>	<td ></td>	<td style="text-align: center;"><h3 class="rotate2"><span type="text" id="Sillanombre'+(IdNum+3)+'"></span><br> '+Puesto+'D</h3></td></tr><tr>	<td></td>	<td style="text-align: center;"><h3><span type="text" id="Sillanombre'+(IdNum+2)+'"></span><br> '+Puesto+'C</h3></td>	<td></td></tr></table>');
+        let juego = $("#tabla-super-polla")[0].dataset.rondaEnJuego
+        let cell = 2 * juego + 2
+        let row = $('table#tabla-super-polla tbody tr:nth-child( 4n + 1 )')
 
+        $.each(row, function (index, value) {
+            $(this)[0].cells[cell].children[0].disabled = true
+            $(this)[0].cells[cell + 1].children[0].disabled = true
+            $(this)[0].classList.remove("line-writer")
+            $(this)[0].cells[cell].children[0].classList.remove("input-puntos")
+            $(this)[0].cells[cell + 1].children[0].classList.remove("input-puntos")
+        });
 
-				//$('#AgregarFila4').before('<span style="border: solid; margin-left: 5px;"><span class="Posicion">'+Puesto+'A </span> 	<b><span class="Posicionnombre" id="Snombre'+IdNum+'"></span></b></span><span style="border: solid; margin-left: 5px;" ><span class="Posicion">'+Puesto+'B </span> <b><span class="Posicionnombre" id="Snombre'+(IdNum+1)+'"></span></b></span><span style="border: solid; margin-left: 5px;"><span  class="Posicion">'+Puesto+'C </span> <b><span class="Posicionnombre" id="Snombre'+(IdNum+2)+'"></span></b></span><span style="border: solid; margin-left: 5px;" ><span  class="Posicion">'+Puesto+'D </span> <b><span class="Posicionnombre" id="Snombre'+(IdNum+3)+'"></span></b></span>');
-			 }else if (PM==2) {
-				PosMesa=Puesto+"B";
-			 }else if (PM==3) {
-				PosMesa=Puesto+"C";
-			 }else if (PM==0) {
-				PosMesa=Puesto+"D";
-				Puesto++;//contador de 4 en 4
-			 }
-				//TrIni='<tr class="celdas TablaPrin" id="TR'+IdNum+'"><td class="tdN">'+IdNum+'</td><td class="tdG">'+PosMesa+'</td><td class="px-2"><input type="text" name="nombreJG'+IdNum+'" class="nombre nombreJG" id="nombreJG'+IdNum+'" placeholder="Identificacion" IdNum="'+IdNum+'"></td><td class="tdG"><input type="text" name="No'+IdNum+'" class="No Med90" id="No'+IdNum+'" No="F'+IdNum+'" maxlength="3" placeholder="No."></td>';
-                TrIni='<tr class="celdas TablaPrin" id="TR'+IdNum+'"><td class="tdN">'+IdNum+'</td><td class="tdG">'+PosMesa+'</td><td class="px-2"><select id="nombreJG'+IdNum+'" IdNum="'+IdNum+'" name="nombreJG'+IdNum+'" class="nombre nombreJG cienPor select select-tabla">'+ optionNombre2 +'</select></td><td class="tdG"><input type="text" IdNum="'+IdNum+'" name="No'+IdNum+'" class="No Med90" id="No'+IdNum+'" No="F'+IdNum+'" maxlength="3" placeholder="No." disabled readonly></td>';
-				Bucle='';
-				for (var i = 1; i <= CantJue; i++) {
-					 clase='';
-					if ((PM=IdNum%4)==1) {
-						clase='PuntosA'+i;
-					}
+        //Ordenamiento de la tabla Principal
+        let table = $('table#tabla-super-polla')
+        let headAvg = document.getElementById("head-avg")
+        let avg = $('table#tabla-super-polla thead #ronda-Puntos th').index(headAvg)
+        //console.log(table.find('tr:gt(0)'))
+        var rowsJueGan = table.find('tr:gt(1)').toArray().sort(comparer(avg - 1))
+        rowsJueGan = rowsJueGan.reverse()
+        var rowsJueGanCopy = [...rowsJueGan]
+        var rowsAvg = rowsJueGanCopy.sort(comparerModificado(avg))
 
-					Bucle=Bucle+'<td><input type="text" name="PuntosF'+IdNum+'" class="'+clase+' numeros PuntosF Med90" id="PuntosF'+i+''+IdNum+'" placeholder="F'+i+'" maxlength="3" Conti="'+i+'" IdNum="'+IdNum+'" disabled></td><td><input type="text" name="PuntosC'+IdNum+'" class="'+clase+' numeros PuntosC Med90" id="PuntosC'+i+''+IdNum+'" placeholder="C'+i+'" maxlength="3" Conti="'+i+'" IdNum="'+IdNum+'" disabled></td>';
-				}
-				TrFin='<td class="tdV"><input type="number" class="JG Med90" id="JG'+IdNum+'" value="0" disabled></td><td class="tdG" style="padding: 0;"><input type="number" class="Efec Med90" id="Efec'+IdNum+'" value="0" disabled></td></tr>';
+        for (var i = 0; i < rowsAvg.length; i++) {
+            table.append(rowsAvg[i])
+        }
 
-			$('#AgregarFila').before(TrIni+Bucle+TrFin);//imprimo el nuevo registro
-			$('#AgregarFila2').before('<tr class="celdas" id="posiciones'+IdNum+'" ><td>'+IdNum+'</td><td><input type="number" name="Cno'+IdNum+'" id="Cno'+IdNum+'" disabled></td><td><span style="padding-right: 80px;"><input type="text" name="CnombreJG'+IdNum+'" id="CnombreJG'+IdNum+'" disabled></td><td><input type="number" class="Med90" id="CJJ'+IdNum+'" value="0" disabled></td><td><input type="number" class="Med90" id="CJG'+IdNum+'" value="0" disabled></td><td><input type="number" class="Med90" id="CJP'+IdNum+'" value="0" disabled></td><td><input type="number" class="Med90" id="PuntF'+IdNum+'" value="0" disabled></td><td><input type="number" class="Med90" id="PuntC'+IdNum+'" value="0" disabled></td><td colspan="5"><input type="number" class="Med90" id="AVE'+IdNum+'" value="0" disabled></td><td class="tdG" colspan="5"><input type="number" class="Med90" id="CEfec'+IdNum+'" value="0" disabled></td><td><input type="number" class="Med90" id="Pro1'+IdNum+'" value="0" disabled></td><td><input type="number" class="Med90" id="ZF'+IdNum+'" value="0" disabled></td><td><input type="number" class="Med90" id="Pro2'+IdNum+'" value="0" disabled></td>/tr>');
+        //Ordenamiento de la tabla de los puntajes generales
+        let tablePuntuacion = $('table#tabla-super-polla-puntaje')
+        let headAvgPuntaje = document.getElementById("head-avg-puntaje")
+        let headJgPuntaje = document.getElementById("head-jg-puntaje")
+        let avgPuntaje = $('table#tabla-super-polla-puntaje thead #ronda-Puntos-puntaje th').index(headAvgPuntaje)
+        let jgPuntaje = $('table#tabla-super-polla-puntaje thead #ronda-Puntos-puntaje th').index(headJgPuntaje)
+        console.log(avgPuntaje)
+        //return
+        var rowsJueGanPuntuacion = tablePuntuacion.find('tr:gt(0)').toArray().sort(comparer(jgPuntaje))
+        rowsJueGanPuntuacion = rowsJueGanPuntuacion.reverse()
+        var rowsJueGanPuntuacionCopy = [...rowsJueGanPuntuacion]
+        var rowsAvgPuntuacion = rowsJueGanPuntuacionCopy.sort(comparerModificado(avgPuntaje, jgPuntaje))
 
-			IdNum++;//incremento el numero de la lista en 1
-		};
-	$('#nombreJG'+(parseInt(IdNum)-parseInt(4))).focus();//foco al nuevo registro a llenar
-	recargaCod();
-	}
-		function recargaCod(){//reinstancia de cod
-				$('.numeros').on({//validacion numericos
-				    "change": function (event) {
-				        $(event.target).val(function (index, value ) {
-				            return value.replace(/\D/g, "");
-				        });
-				        if (($(this).attr('IdNum')%4)==1) {
-				        	 autoCompletado($(this).attr('Conti'),$(this).attr('IdNum'))
-				        }
-				        CuentaReg($(this).attr('Conti'),$(this).attr('IdNum'));
-				    }
+        $('table#tabla-super-polla-puntaje tbody tr').remove();
+        for (var i = 0; i < rowsAvgPuntuacion.length; i++) {
+            tablePuntuacion.append(rowsAvgPuntuacion[i])
+        }
 
-				});
-				$('.nombre').on({//replicar
-				    "change": function (event) {
-				     $('#CnombreJG'+$(this).attr('IdNum')).val($(this).val());
-				     $('#Sillanombre'+$(this).attr('IdNum')).text($(this).val());
-				    $('#Snombre'+$(this).attr('IdNum')).text($(this).val());//Si se quiere mostrar el nombre
-				   // $('#Snombre'+$(this).attr('IdNum')).text($("#No"+$(this).attr('IdNum')).val());//Si se quiere mostrar el no
-				}
-				});
+        posicionesYMesas($("#tabla-super-polla")[0].rows)
+        numeroYMesa($('table#tabla-super-polla tbody')[0])
 
-		};
-	function CuentaReg(Conti,IdNum){
-		// console.log(Conti+','+IdNum);
-		CantJG=0;
-		cont=1;
-		CantEfec=0;
-		JueJug=0;
-		PuntF=0;
-		PuntC=0;
-		ZF=0;
-		ZC=0;
-		PuntoFinal=0;
-		$("#TR"+IdNum+" .numeros").each(function(){
-			if($('#PuntosF'+cont+''+IdNum).val() && $('#PuntosC'+cont+''+IdNum).val()){
-				if (parseInt($('#PuntosF'+cont+''+IdNum).val())>=100) {
-					CantJG++;
-				}
-				if (parseInt($('#PuntosF'+cont+''+IdNum).val())==0) {
-					ZC++;
-				}else if (parseInt($('#PuntosC'+cont+''+IdNum).val())==0) {
-					ZF++;
-				}
+        $("#button-start").prop('disabled', false)
+        $("#button-order").prop('disabled', true)
 
-					CantEfec=parseInt(CantEfec)+(parseInt($('#PuntosF'+cont+''+IdNum).val())-parseInt($('#PuntosC'+cont+''+IdNum).val()));
-					PuntF=PuntF+parseInt($('#PuntosF'+cont+''+IdNum).val());
-					PuntC=PuntC+parseInt($('#PuntosC'+cont+''+IdNum).val());
-			JueJug++;
-			//console.log('#PuntosF'+cont+''+IdNum);
-			}
-			cont++;
-		});
-		$('#JG'+IdNum).val(CantJG);//juegos ganados
-		$('#CJG'+IdNum).val(CantJG);
-		$('#CJP'+IdNum).val(JueJug-CantJG);//juegos perdidos
-		$('#Efec'+IdNum).val(CantEfec);//efecto causado
-		$('#AVE'+IdNum).val(CantEfec);
-		$('#CJJ'+IdNum).val(JueJug);//juegos jugados
-		if (JueJug) { $('#CEfec'+IdNum).val(Math.round((CantJG*1000)/JueJug));/*efect*/}
-		$('#PuntF'+IdNum).val(PuntF);//puntos+
-		$('#PuntC'+IdNum).val(PuntC);//puntos-
-		if (JueJug) {$('#Pro1'+IdNum).val(Math.round(PuntF/JueJug));/*Pro1*/}
-		$('#ZF'+IdNum).val(ZF);//Z+
-		$('#ZC'+IdNum).val(ZC);//Z-
-		if (IdNum==1) {PuntoFinal=6;}else if(IdNum==2){PuntoFinal=5;}else if(IdNum==3){PuntoFinal=4;}else if(IdNum==4){PuntoFinal=3;}else if(IdNum==5){PuntoFinal=2.5;}else if(IdNum==6){PuntoFinal=2;}else if(IdNum==7){PuntoFinal=1.5;}else if(IdNum==8){PuntoFinal=1;}else if(IdNum==9){PuntoFinal=0.5;}
-		$('#Pro2'+IdNum).val(1+(CantJG*2)+((JueJug-CantJG)*(-1))+(ZF*1)+PuntoFinal);//Z-
-	}
-C=1;
+    })
 
-function Sigiente(vC){
-//alert(C);
-ContCampos=0;
-for (var i = 1; i <IdNum; i++) {//creo el numero de posiciones disponibles
-		if ($('#nombreJG'+i).val()) {//cuento solo los registrsos con nombres
-			ContCampos++;
-		}
-	}
-CamposSobrantes=ContCampos%4;
-while(CamposSobrantes!=0){
-	$('#PuntosF'+C+''+ContCampos).val('100');
-	$('#PuntosC'+C+''+ContCampos).val('50');
-	 CuentaReg(C,ContCampos);
+    $(document).on('change', '#select-ronda', function (event) {
+        if (event.target.value) {
+            for (var i = 6; i <= event.target.value; i++) {
+                let count = $("#ronda-Puntos").children().length - 2
 
-	ContCampos--;
-	CamposSobrantes=ContCampos%4;
-}
-CatVacio=0;
-$(".PuntosA"+C).each(function(){
-	if (!$(this).val()) {
-		CatVacio++;
-	}
-});
-if (CatVacio==0) {
-	//alert(C);
-	// BTNTXT='Terminar Juego'+(C+1);
-	// if (C>CantJue){
-	// 	BTNTXT='Terminar';
-	// }
-	$("#BTNSig").text('Terminar Juego'+(C+1));
-		habilitarCampos();
-		reordenar(vC);
-}
-}
+                const elementRow = `<th colspan="2" class="tdV last-ronda-juego">Juego ${i}</th>`
+                $('.last-ronda-juego').last().after(elementRow)
 
-function habilitarCampos(){
-	C++;
-	$(".PuntosA"+C).removeAttr('disabled');
-	if (C>CantJue) {
-		$("#BTNSig").hide();
-		$("#submit_tabla").removeAttr('style');
+                const elementRowGame = `<th class="tdG" title="Puntos a Fabor.">F</th><th class="tdG" title="Puntos en Contra.">C</th>`
+                $("#ronda-Puntos th:nth-child(" + count + ")").after(elementRowGame)
 
-	}
-}
-function reordenar(vCon){
-	var Con=0;
-	var Mayor=-10000;
-	var MayorJG=-1;
-	var MayorPro=0;
-	var PerMayor=0;
-	$(".TablaPrin").each(function(){
-		Con++;
-		if (Con>=vCon) {
+                $.each($(".row-game td:nth-child(" + count + ")"), function (index, value) {
+                    const elementRowPoint = `<td data-ronda="${i}" data-puntos="F"><input type="number" class="PuntosF" disabled></td><td data-ronda="${i}" data-puntos="C"><input type="number" class="PuntosC" disabled></td>`
+                    $(this).after(elementRowPoint)
+                });
+            }
+        }
+        event.target.disabled = true
+    })
 
-				// console.log(parseInt(MayorJG)+'<='+parseInt($("#JG"+Con).val()));
-				// console.log(Mayor+'<'+parseInt($("#Efec"+Con).val()));
-				// console.log(MayorJG+'<='+parseInt($("#JG"+Con).val()));
-			if (MayorJG<=parseInt($("#JG"+Con).val())) {
-				if (Mayor<parseInt($("#Efec"+Con).val()) || MayorJG<parseInt($("#JG"+Con).val())) {
-				 // console.log(parseInt(Mayor)+'<='+parseInt($("#Efec"+Con).val()));
-// console.log('si');
-					//if (parseInt(MayorPro)<parseInt($("#Pro1"+Con).val())) {
-						MayorJG=parseInt($("#JG"+Con).val());
-						//MayorPro=parseInt($("#Pro1"+Con).val());
-						Mayor=parseInt($("#Efec"+Con).val());
-						PerMayor=Con;
-					//}
-				}
-			}
-				// console.log('#########################################');
+    $(document).on('click', '#button-start', function (event) {
 
-		}
+        $('table#tabla-super-polla-puntaje tbody tr').remove(); //Borra los elementos de la tabla de puntaje para escribir los nuevos
 
-	});
-	// alert(vCon+"/"+Con+"/"+PerMayor);
-	CJJ=$("#CJJ"+vCon).val();
-	CJG=$("#CJG"+vCon).val();
-	CJP=$("#CJP"+vCon).val();
-	PuntF=$("#PuntF"+vCon).val();
-	PuntC=$("#PuntC"+vCon).val();
-	AVE=$("#AVE"+vCon).val();
-	Med9=$("#Med9"+vCon).val();
-	Pro1=$("#Pro1"+vCon).val();
-	ZF=$("#ZF"+vCon).val();
-	//Pro2=$("#Pro2"+vCon).val();
-	CEfec=$("#CEfec"+vCon).val();
+        $("#tabla-super-polla")[0].dataset.rondaEnJuego = parseInt($("#tabla-super-polla")[0].dataset.rondaEnJuego) + 1
+        let juego = $("#tabla-super-polla")[0].dataset.rondaEnJuego
+        let cell = 2 * juego + 2
+        let rowCount = $('table#tabla-super-polla tbody tr').length
+        let row = $('table#tabla-super-polla tbody tr:nth-child( 4n + 1 )')
 
-if (PerMayor==1) {PuntoFinal=6;}else if(PerMayor==2){PuntoFinal=5;}else if(PerMayor==3){PuntoFinal=4;}else if(PerMayor==4){PuntoFinal=3;}else if(PerMayor==5){PuntoFinal=2.5;}else if(PerMayor==6){PuntoFinal=2;}else if(PerMayor==7){PuntoFinal=1.5;}else if(PerMayor==8){PuntoFinal=1;}else if(PerMayor==9){PuntoFinal=0.5;}
-		Pro2=1+(CJG*2)+((CJJ-CJG)*(-1))+(ZF*1)+PuntoFinal;//Z-
+        $.each(row, function (index, value) {
+            $(this)[0].cells[cell].children[0].disabled = false
+            $(this)[0].cells[cell + 1].children[0].disabled = false
+            $(this)[0].classList.add("line-writer")
+            $(this)[0].cells[cell].children[0].classList.add("input-puntos")
+            $(this)[0].cells[cell + 1].children[0].classList.add("input-puntos")
+        });
 
-	$("#CJJ"+vCon).val($("#CJJ"+PerMayor).val());
-	$("#CJG"+vCon).val($("#CJG"+PerMayor).val());
-	$("#CJP"+vCon).val($("#CJP"+PerMayor).val());
-	$("#PuntF"+vCon).val($("#PuntF"+PerMayor).val());
-	$("#PuntC"+vCon).val($("#PuntC"+PerMayor).val());
-	$("#AVE"+vCon).val($("#AVE"+PerMayor).val());
-	$("#Med9"+vCon).val($("#Med9"+PerMayor).val());
-	$("#Pro1"+vCon).val($("#Pro1"+PerMayor).val());
-	$("#ZF"+vCon).val($("#ZF"+PerMayor).val());
-	//$("#Pro2"+vCon).val($("#Pro2"+PerMayor).val());
-	$("#CEfec"+vCon).val($("#CEfec"+PerMayor).val());
-if (vCon==1) {PuntoFinal=6;}else if(vCon==2){PuntoFinal=5;}else if(vCon==3){PuntoFinal=4;}else if(vCon==4){PuntoFinal=3;}else if(vCon==5){PuntoFinal=2.5;}else if(vCon==6){PuntoFinal=2;}else if(vCon==7){PuntoFinal=1.5;}else if(vCon==8){PuntoFinal=1;}else if(vCon==9){PuntoFinal=0.5;}else{PuntoFinal=1;}
-		//Pro2=$('#Pro2'+vCon).val(1+(CJG*2)+((CJJ-CJG)*(-1))+(ZF*1)+PuntoFinal);//Z-
-	$("#Pro2"+vCon).val(1+($("#CJG"+PerMayor).val()*2)+(($("#CJJ"+PerMayor).val()-$("#CJG"+PerMayor).val())*(-1))+($("#ZF"+PerMayor).val()*1)+PuntoFinal);
+        $('table#tabla-super-polla tbody tr:nth-child( 1 )')[0].cells[cell].children[0].focus()
+
+        const result = rowCount % 4
+        if (result != 0) {
+            $("table#tabla-super-polla tbody tr:nth-last-child(" + result + ")").prev().nextAll()
+
+            $.each($("table#tabla-super-polla tbody tr:nth-last-child(" + result + ")").prev().nextAll(), (index, value) => {
+                if (index == 0) {
+                    $(value)[0].cells[cell].children[0].classList.remove("input-puntos")
+                    $(value)[0].cells[cell + 1].children[0].classList.remove("input-puntos")
+
+                    $(value)[0].cells[cell].children[0].disabled = true
+                    $(value)[0].cells[cell + 1].children[0].disabled = true
+                }
+                $(value)[0].cells[cell].children[0].value = 100
+                $(value)[0].cells[cell + 1].children[0].value = 50
+
+                //$(".input-puntos").trigger("focusout");
+                const rowSum = $(value)[0].cells
+
+                let JG = 0, JP = 0, PFavor = 0, PContra = 0, Z = 0
+                Array.from(rowSum, (element, index) => {
+
+                    if (index > 3 && index < rowSum.length - 2) {
+                        const input = parseFloat($(element)[0].children[0].value)
+                        if (!isNaN(input)) {
+                            let bo = $(element)[0].dataset.puntos
+                            if ($(element)[0].dataset.puntos == "C") {
+                                PContra += parseFloat($(element)[0].children[0].value)
+                                if (input >= 100) {
+                                    JP += parseInt(1)
+                                }
+                                if (input == 0)
+                                    Z += parseInt(1)
+                            } else {
+                                PFavor += parseFloat($(element)[0].children[0].value)
+                                if (input >= 100) {
+                                    JG += parseInt(1)
+                                }
+                            }
+                        }
+                    }
+                })
+
+                tablaPuntuacionPolla(value, index, JG, JP, PContra, PFavor, Z, $("#tabla-super-polla")[0].rows.length - 2, juego, true)
+
+                $(value).find(".jg")[0].innerHTML = JG
+                $(value).find(".avg")[0].innerHTML = PFavor - PContra
+            });
+        }
+        //coloca funcion de las posiciones y mesas
+        posicionesYMesas($("#tabla-super-polla")[0].rows)
+
+        //document.getElementById("button-mix").setAttribute("disabled", "disabled");
+
+        $("#button-start").prop('disabled', true)
+        $("#button-order").prop('disabled', false)
+    })
+
+    $(document).on('focusout', '.input-puntos', function (event) {
+
+        let punto = $(event.target.parentElement)[0].dataset.puntos
+        let puntuacion = event.target.value
+        let juego = $("#tabla-super-polla")[0].dataset.rondaEnJuego
+        let cell = 2 * juego + 2
+        let impar = true
+        punto == "F" ? (impar = true) : (impar = false)
+
+        $.each($(event.target.parentElement.parentElement).nextUntil(".line-writer"), function (index, value) {
+            (impar) ? cellNew = cell + 1 : cellNew = cell
+            impar = !impar
+            $(value).children()[cellNew].children[0].value = event.target.value // Revisar sintaxis
+        });
+
+        const cellF = $(event.target.parentElement.parentElement).children()[cell].children[0].value
+        const cellC = $(event.target.parentElement.parentElement).children()[cell + 1].children[0].value
+
+        if (cellF && cellC) {
+
+            const a = Array.from($(event.target.parentElement.parentElement)) //Row primera de las cuatro
+            const b = Array.from($(event.target.parentElement.parentElement).nextUntil(".line-writer")) //Las 3 Rows que le siguen a la anterior
+            const rows = [...a, ...b]
+
+            rows.forEach(function callback(currentValue, index, array) {
+                const rowSum = $(currentValue)[0].cells
+
+                let JG = 0, JP = 0, PFavor = 0, PContra = 0, Z = 0
+                Array.from(rowSum, (element, index) => {
+
+                    if (index > 3 && index < rowSum.length - 2) {
+                        const input = parseFloat($(element)[0].children[0].value)
+                        if (!isNaN(input)) {
+                            let bo = $(element)[0].dataset.puntos
+                            if ($(element)[0].dataset.puntos == "C") {
+                                PContra += parseFloat($(element)[0].children[0].value)
+                                if (input >= 100) {
+                                    JP += parseInt(1)
+                                }
+                                if (input == 0)
+                                    Z += parseInt(1)
+                            } else {
+                                PFavor += parseFloat($(element)[0].children[0].value)
+                                if (input >= 100) {
+                                    JG += parseInt(1)
+                                }
+                            }
+                        }
+                    }
+                })
+
+                //Carga las puntuaciones en la otra tabla
+                tablaPuntuacionPolla(currentValue, index, JG, JP, PContra, PFavor, Z, $("#tabla-super-polla")[0].rows.length - 2, juego)
+                $(currentValue).find(".jg")[0].innerHTML = JG
+                $(currentValue).find(".avg")[0].innerHTML = PFavor - PContra
+            })
+
+        }
+        //Termina la funcion
+    })
 
 
-	$("#CJJ"+PerMayor).val(CJJ);
-	$("#CJG"+PerMayor).val(CJG);
-	$("#CJP"+PerMayor).val(CJP);
-	$("#PuntF"+PerMayor).val(PuntF);
-	$("#PuntC"+PerMayor).val(PuntC);
-	$("#AVE"+PerMayor).val(AVE);
-	$("#Med9"+PerMayor).val(Med9);
-	$("#Pro1"+PerMayor).val(Pro1);
-	$("#ZF"+PerMayor).val(ZF);
-	$("#Pro2"+PerMayor).val(Pro2);
-	$("#CEfec"+PerMayor).val(CEfec);
+    $(document).on('click', '#button-add', function (event) {
+
+        let line = `<tr class="row-game">
+                            <td class="tdN">Pos</td>
+                            <td class="tdG">Mesa</td>
+                            <td class="tdG"><select class="select">${optionNombre2}</select></td>
+                            <td class="numero-tabla">No.</td>
+                            <td data-ronda="1" data-puntos="F"><input type="number" style="width: 100%;" class="PuntosF" disabled/></td>
+                            <td data-ronda="1" data-puntos="C"><input type="number" style="width: 100%;" class="PuntosC" disabled/></td>
+                            <td data-ronda="2" data-puntos="F"><input type="number" style="width: 100%;" class="PuntosF" disabled/></td>
+                            <td data-ronda="2" data-puntos="C"><input type="number" style="width: 100%;" class="PuntosC" disabled/></td>
+                            <td data-ronda="3" data-puntos="F"><input type="number" style="width: 100%;" class="PuntosF" disabled/></td>
+                            <td data-ronda="3" data-puntos="C"><input type="number" style="width: 100%;" class="PuntosC" disabled/></td>
+                            <td data-ronda="4" data-puntos="F"><input type="number" style="width: 100%;" class="PuntosF" disabled/></td>
+                            <td data-ronda="4" data-puntos="C"><input type="number" style="width: 100%;" class="PuntosC" disabled/></td>
+                            <td data-ronda="5" data-puntos="F"><input type="number" style="width: 100%;" class="PuntosF" disabled/></td>
+                            <td data-ronda="5" data-puntos="C"><input type="number" style="width: 100%;" class="PuntosC" disabled/></td>
+                            `;
 
 
-	Efec=$("#Efec"+vCon).val();
-	JG=$("#JG"+vCon).val();
-	nombreJG=$("#nombreJG"+vCon).val();
-	No=$("#No"+vCon).val();
-	PuntosF1=$("#PuntosF1"+vCon).val();
-	PuntosC1=$("#PuntosC1"+vCon).val();
-	PuntosF2=$("#PuntosF2"+vCon).val();
-	PuntosC2=$("#PuntosC2"+vCon).val();
-	PuntosF3=$("#PuntosF3"+vCon).val();
-	PuntosC3=$("#PuntosC3"+vCon).val();
-	PuntosF4=$("#PuntosF4"+vCon).val();
-	PuntosC4=$("#PuntosC4"+vCon).val();
-	PuntosF5=$("#PuntosF5"+vCon).val();
-	PuntosC5=$("#PuntosC5"+vCon).val();
+        if ($("#select-ronda").val()) {
+            for (var i = 6; i <= $("#select-ronda").val(); i++) {
+                line += `<td data-ronda="${i}" data-puntos="F"><input type="number" style="width: 100%;" class="PuntosF" disabled/></td>
+                                 <td data-ronda="${i}" data-puntos="C"><input type="number" style="width: 100%;" class="PuntosC" disabled/></td>`
+            }
+        }
+        line += `<td class="jg">0</td>
+                            <td class="avg">0</td>
+                        </tr>`
 
-	$("#Efec"+vCon).val($("#Efec"+PerMayor).val());
-	$("#JG"+vCon).val($("#JG"+PerMayor).val());
-	$("#nombreJG"+vCon).val($("#nombreJG"+PerMayor).val());
-	$("#No"+vCon).val($("#No"+PerMayor).val());
-	$("#PuntosF1"+vCon).val($("#PuntosF1"+PerMayor).val());
-	$("#PuntosC1"+vCon).val($("#PuntosC1"+PerMayor).val());
-	$("#PuntosF2"+vCon).val($("#PuntosF2"+PerMayor).val());
-	$("#PuntosC2"+vCon).val($("#PuntosC2"+PerMayor).val());
-	$("#PuntosF3"+vCon).val($("#PuntosF3"+PerMayor).val());
-	$("#PuntosC3"+vCon).val($("#PuntosC3"+PerMayor).val());
-	$("#PuntosF4"+vCon).val($("#PuntosF4"+PerMayor).val());
-	$("#PuntosC4"+vCon).val($("#PuntosC4"+PerMayor).val());
-	$("#PuntosF5"+vCon).val($("#PuntosF5"+PerMayor).val());
-	$("#PuntosC5"+vCon).val($("#PuntosC5"+PerMayor).val());
+        $('#tabla-super-polla tr:last').after(line.repeat(4))
 
-	$("#Efec"+PerMayor).val(Efec);
-	$("#JG"+PerMayor).val(JG);
-	$("#nombreJG"+PerMayor).val(nombreJG);
-	$("#No"+PerMayor).val(No);
-	$("#PuntosF1"+PerMayor).val(PuntosF1);
-	$("#PuntosC1"+PerMayor).val(PuntosC1);
-	$("#PuntosF2"+PerMayor).val(PuntosF2);
-	$("#PuntosC2"+PerMayor).val(PuntosC2);
-	$("#PuntosF3"+PerMayor).val(PuntosF3);
-	$("#PuntosC3"+PerMayor).val(PuntosC3);
-	$("#PuntosF4"+PerMayor).val(PuntosF4);
-	$("#PuntosC4"+PerMayor).val(PuntosC4);
-	$("#PuntosF5"+PerMayor).val(PuntosF5);
-	$("#PuntosC5"+PerMayor).val(PuntosC5);
-	//Modificando tabla 2 y silla
-$('#CnombreJG'+vCon).val($("#nombreJG"+vCon).val());
-$('#Sillanombre'+vCon).text($("#nombreJG"+vCon).val());
-$('#Cno'+vCon).val($("#No"+vCon).val());//si se quiere mostrar el no
-$('#Snombre'+vCon).text($("#nombreJG"+vCon).val());//Si se quiere mostrar el nombre
-//CuentaReg($("#PuntosF1"+vCon).attr('Conti'),$("#PuntosF1"+vCon).attr('IdNum'));
-//    $('#Cno'+vCon).val($("#nombreJG"+i).parent().parent().find("td:eq(3)").children().val());
+        $("#button-mix").prop('disabled', false)
+    })
 
-	if (Con>vCon) {
-		vCon++;
-		reordenar(vCon);
-	}
-}
-function autoCompletado(C,N){
-	$("#PuntosF"+C+""+N).val();
-	$("#PuntosC"+C+""+N).val();
+    $(document).on('change', '.select', function (event) {
+        $(event.target.parentElement.parentElement)[0].cells[3].innerHTML = event.target.value
+    })
 
-	$("#PuntosF"+C+""+Math.round(parseInt(N)+parseInt(1))).val($("#PuntosC"+C+""+N).val());
-	$("#PuntosC"+C+""+Math.round(parseInt(N)+parseInt(1))).val($("#PuntosF"+C+""+N).val());
-	CuentaReg("",$("#PuntosF1"+Math.round(parseInt(N)+parseInt(1))).attr('IdNum'));
-	$("#PuntosF"+C+""+Math.round(parseInt(N)+parseInt(2))).val($("#PuntosF"+C+""+N).val());
-	$("#PuntosC"+C+""+Math.round(parseInt(N)+parseInt(2))).val($("#PuntosC"+C+""+N).val());
-	CuentaReg("",$("#PuntosF1"+Math.round(parseInt(N)+parseInt(2))).attr('IdNum'));
-	$("#PuntosF"+C+""+Math.round(parseInt(N)+parseInt(3))).val($("#PuntosC"+C+""+N).val());
-	$("#PuntosC"+C+""+Math.round(parseInt(N)+parseInt(3))).val($("#PuntosF"+C+""+N).val());
-	CuentaReg("",$("#PuntosF1"+Math.round(parseInt(N)+parseInt(3))).attr('IdNum'));
+
+    function comparer(index) {
+        return function (a, b) {
+            var valA = getCellValue(a, index),
+                valB = getCellValue(b, index),
+                valC = getCellValue(a, index + 1),
+                valD = getCellValue(b, index + 1)
+            //console.log(valA, valB, valC, valD)
+            return $.isNumeric(valA) && $.isNumeric(valB) ? valA - valB : valA.localeCompare(valB)
+        }
+    }
+
+    function comparerModificado(index, jgPuntaje = index - 1) {
+        return function (a, b) {
+            var valA = getCellValue(a, index),
+                valB = getCellValue(b, index),
+                valC = getCellValue(a, jgPuntaje),
+                valD = getCellValue(b, jgPuntaje)
+            //console.log("valores", valA, valB, valC, valD)
+            if (valC === valD) {
+                return $.isNumeric(valA) && $.isNumeric(valB) ? valB - valA : valA.localeCompare(valB)
+            }
+            return 0;
+        }
+    }
+
+    function getCellValue(row, index) {
+        return $(row).children('td').eq(index).html()
+    }
+
+    $(document).on('click', '#button-mix', function (event) {
+        let table = $('table#tabla-super-polla tbody')[0]
+        //1. get all rows
+        let rowsCollection = $('table#tabla-super-polla tbody tr')
+
+        //2. convert to array
+        let rows = Array.from(rowsCollection)
+
+        //3. shuffle
+        shuffleArray(rows);
+
+        //4. add back to the DOM
+        for (const row of rows) {
+            table.appendChild(row);
+        }
+
+        document.getElementById("button-add").setAttribute("disabled", "disabled");
+
+        const selected = [];
+
+        $(".select").each((index, element) => {
+            $(element)[0].disabled = true
+
+            if ($(element)[0].value == 0) {
+                $(element)[0].parentElement.parentElement.remove()
+            }
+        });
+
+        posicionesYMesas($("#tabla-super-polla")[0].rows)
+        //Colocar la creacion de mesas y el numero
+        numeroYMesa(table)
+
+        $("#button-start").prop('disabled', false)
+        $("#button-mix").prop('disabled', true)
+    })
+
+    function shuffleArray(array) {
+        for (var i = array.length - 1; i > 0; i--) {
+            var j = Math.floor(Math.random() * (i + 1));
+            var temp = array[i];
+            array[i] = array[j];
+            array[j] = temp;
+        }
+    }
+    var positionTablaCopy = 0
+
+    function tablaPuntuacionPolla(currentValue, index, JG, JP, PContra, PFavor, Z, rowsTabOrig, juego, leftoverFields = false) {
+        //Cargar en la tabla de puntuaciones
+        let tablePuntuacionCell = $('#tabla-super-polla-puntaje')[0].rows[0].cells.length
+        let tablePuntuacion = $('#tabla-super-polla-puntaje tbody')[0]
+
+        if (!leftoverFields) {
+            positionTablaCopy = 0
+        }
+        console.log(currentValue)
+        console.log("index", index)
+        console.log("JG", JG)
+        console.log("JP", JP)
+        console.log("PContra", PContra)
+        console.log("PFavor", PFavor)
+        console.log("Z", Z)
+        console.log("rowsTabOrig", rowsTabOrig)
+
+        console.log("Error", positionTablaCopy)
+
+        var rowTabPuntuaciones = tablePuntuacion.insertRow(positionTablaCopy);
+        for (let celda = 0; celda < tablePuntuacionCell; celda++) {
+            this["cell" + celda] = rowTabPuntuaciones.insertCell(celda);
+        }
+
+        cell8.colSpan = "5"
+        cell9.colSpan = "5"
+
+        cell0.innerHTML = $(currentValue)[0].cells[0].textContent;
+        cell1.innerHTML = $(currentValue)[0].cells[2].children[0].selectedOptions[0].value;
+        cell2.innerHTML = $(currentValue)[0].cells[2].children[0].selectedOptions[0].label;
+        cell3.innerHTML = juego;
+        cell4.innerHTML = JG;
+        cell5.innerHTML = JP;
+        cell6.innerHTML = PFavor;
+        cell7.innerHTML = PContra;
+        cell8.innerHTML = PFavor - PContra;
+        cell9.innerHTML = parseFloat((JG * 1000) / juego).toFixed(2);
+        cell10.innerHTML = parseFloat(PFavor / juego).toFixed(2);
+        cell11.innerHTML = Z;
+        cell12.innerHTML = 1 + (JG * 2) + ((juego - JG) * (-1)) + (Z + 1) + 6;
+
+        positionTablaCopy += 1
+        let tablePuntuacionLength = $('#tabla-super-polla-puntaje tbody')[0].rows.length
+
+        if (rowsTabOrig == tablePuntuacionLength) {
+            positionTablaCopy = 0
+        }
 
     }
 
-    function enabledSelect() {
+    function posicionesYMesas(tablaRows) {
+
+        let position = 0
+        let arrMesa = 0
+        let numero = 1
+        let mesa = ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "U", "V", "W", "X", "Y", "Z"];
+
+        $.each($("#tabla-super-polla")[0].rows, (index, value) => {
+            if (index >= 2) {
+                position += 1
+                $(value)[0].cells[0].innerHTML = position
+                $(value)[0].cells[1].innerHTML = numero + mesa[arrMesa]
+                numero >= 4 ? (numero = 1, arrMesa += 1) : numero += 1
+            }
+        })
+    }
+
+    function numeroYMesa(tablaRows) {
+        const node = document.getElementById("container-players")
+        const line = [];
+
+        while (node.hasChildNodes()) {
+            node.removeChild(node.lastChild);
+        }
+
+        $.each($(tablaRows)[0].rows, function (index, value) {
+            let objLine = { "No": $(value)[0].cells[3].textContent, "table": $(value)[0].cells[1].textContent }
+            line.push(objLine);
+        });
+
+        line.sort((a, b) => (parseFloat(a.No) > parseFloat(b.No)) ? 1 : -1)
+
+        line.map((player) => {
+            $("#container-players").append(`<div class="col col-md-1 container-table-player">
+                    <div class="item-number">${player.No}</div>
+                    <div class="item-table">${player.table}</div>
+                </div>`)
+        })
+    }
+
+
+
+    /*function enabledSelect() {
         const selected = [];
 
         $(".select").each(function () {
@@ -597,126 +791,30 @@ function autoCompletado(C,N){
         for (var index in selected) {
             $('option[value="' + selected[index] + '"]').prop("disabled", false);
         }
-    }
+    }*/
 
+       // const line = [];
 
-    function aleatorio() {
-        enabledSelect();
-        var arrayAleatorio = [];
-        //Recorro la tabla y borro los campos
-        //$(".TablaPrin").each(function(){});
-        for (var i = 1; i < IdNum; i++) {//creo el numero de posiciones disponibles
-            if ($('#nombreJG' + i).val() != 0) {//cuento solo los registrsos con nombres
-                arrayAleatorio.push(i);
-            } else {//elimino los registros sin nombre
-                $('#TR' + i).remove();
-                $('#posiciones' + i).remove();
-            }
-        }
-        // arrayAleatorio.forEach(function(elemento,indice,array){
-        // alert(indice);	alert(elemento);
-        // });
-        TamaArra = arrayAleatorio.length;
-        for (var i = 1; i <= TamaArra; i++) {
-            Lista = arrayAleatorio.length;
-            //console.log(arrayAleatorio.length);//tamaño del array
-            var PosArrAle = Math.floor((Math.random() * Lista));//numero a eliminar
-            //console.log(PosArrAle+"/"+i);//numero a eliminar
-            posArraJG = arrayAleatorio[PosArrAle];
-            arrayAleatorio.splice(PosArrAle, 1);
-            //PosArrAle++;
-            //console.log(arrayAleatorio);
-            Efec = $("#Efec" + i).val();
-            JG = $("#JG" + i).val();
-            nombreJG = $("#nombreJG" + i).val();
-            No = $("#No" + i).val();
-            PuntosF1 = $("#PuntosF1" + i).val();
-            PuntosC1 = $("#PuntosC1" + i).val();
-            PuntosF2 = $("#PuntosF2" + i).val();
-            PuntosC2 = $("#PuntosC2" + i).val();
-            PuntosF3 = $("#PuntosF3" + i).val();
-            PuntosC3 = $("#PuntosC3" + i).val();
-            PuntosF4 = $("#PuntosF4" + i).val();
-            PuntosC4 = $("#PuntosC4" + i).val();
-            PuntosF5 = $("#PuntosF5" + i).val();
-            PuntosC5 = $("#PuntosC5" + i).val();
-
-	$("#Efec"+i).val($("#Efec"+posArraJG).val());
-	$("#JG"+i).val($("#JG"+posArraJG).val());
-	$("#nombreJG"+i).val($("#nombreJG"+posArraJG).val());
-	$("#No"+i).val($("#No"+posArraJG).val());
-	$("#PuntosF1"+i).val($("#PuntosF1"+posArraJG).val());
-	$("#PuntosC1"+i).val($("#PuntosC1"+posArraJG).val());
-	$("#PuntosF2"+i).val($("#PuntosF2"+posArraJG).val());
-	$("#PuntosC2"+i).val($("#PuntosC2"+posArraJG).val());
-	$("#PuntosF3"+i).val($("#PuntosF3"+posArraJG).val());
-	$("#PuntosC3"+i).val($("#PuntosC3"+posArraJG).val());
-	$("#PuntosF4"+i).val($("#PuntosF4"+posArraJG).val());
-	$("#PuntosC4"+i).val($("#PuntosC4"+posArraJG).val());
-	$("#PuntosF5"+i).val($("#PuntosF5"+posArraJG).val());
-	$("#PuntosC5"+i).val($("#PuntosC5"+posArraJG).val());
-
-	$("#Efec"+posArraJG).val(Efec);
-	$("#JG"+posArraJG).val(JG);
-	$("#nombreJG"+posArraJG).val(nombreJG);
-	$("#No"+posArraJG).val(No);
-	$("#PuntosF1"+posArraJG).val(PuntosF1);
-	$("#PuntosC1"+posArraJG).val(PuntosC1);
-	$("#PuntosF2"+posArraJG).val(PuntosF2);
-	$("#PuntosC2"+posArraJG).val(PuntosC2);
-	$("#PuntosF3"+posArraJG).val(PuntosF3);
-	$("#PuntosC3"+posArraJG).val(PuntosC3);
-	$("#PuntosF4"+posArraJG).val(PuntosF4);
-	$("#PuntosC4"+posArraJG).val(PuntosC4);
-	$("#PuntosF5"+posArraJG).val(PuntosF5);
-	$("#PuntosC5"+posArraJG).val(PuntosC5);
-	//Modificando tabla 2 y silla
-
-	}
-	for (var i =1;  i <=TamaArra; i++) {
-		$('#CnombreJG'+i).val($("#nombreJG"+i).val());
-		$('#Sillanombre'+i).text($("#nombreJG"+i).val());
-		$('#Cno'+i).val($("#No"+i).val());//si se quiere mostrar el no
-		$('#Snombre'+i).text($("#nombreJG"+i).val());//Si se quiere mostrar el nombre
-		//CuentaReg($("#PuntosF1"+vCon).attr('Conti'),$("#PuntosF1"+vCon).attr('IdNum'));
-
-        }
-        $("#BTNSig").removeAttr('style');
-        $("#BTNaleatorio").hide();
-        $(".PuntosA1").removeAttr('disabled');
-        $("#AgregarReg").hide();
-
-        $(".select").prop("disabled", "disabled");
-
-
-        const line = [];
-
-        $(".select").each(function () {
+        /*$(".select").each(function () {
             $(this).each(function () {
                 if ( ($('option:selected', this).val()) != 0 ) {
                     let objLine = { "No": $('option:selected', this).parents("tr")[0].childNodes[3].childNodes[0].value, "table": $('option:selected', this).parents("tr")[0].childNodes[1].innerText }
                     line.push( objLine );
                 }
             });
-        });
+        });*/
 
-        orderedobjLine = [...line];
+       /* orderedobjLine = [...line];
         orderedobjLine.sort((a, b) => (parseFloat(a.No) > parseFloat(b.No)) ? 1 : -1)
 
         console.log(line)
-        console.log(orderedobjLine)
+        console.log(orderedobjLine)*/
 
         //var files = JSON.parse(orderedobjLine);
 
-        orderedobjLine.map( (player)=>{
+        /*orderedobjLine.map( (player)=>{
             $( "#container-players" ).append( ' <div class="col col-md-2" style="display: grid; grid-template-columns: 1fr 2fr; margin: 10px; border-radius:5px; padding-left: 0; border: 1px solid black"><div style="grid-column: 1; background: #ff9400; padding: 20px; font-size: 20px; text-align: center;">'+ player.No  +'</div><div style="grid-column: 2; padding: 20px; font-size: 20px; text-align: center;" >'+player.table +'</div></div>' );
-		})
-
-
-
-
-
-    }
+		})*/
 
 
 </script>
